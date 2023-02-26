@@ -1,14 +1,77 @@
+# Lecture
+
+## Print and None
+
+```python
+>>> print(print(1), print(2))
+1
+2
+None
+None
+# cuz print return None
+```
+
+## Multiple Environments
+
+## Miscellaneous Python Features
+
+```python
+# multiple return value
+def divide_exact(n ,d):
+    return n // d, n%d
+>>> quotient, remainder = divide_exact(2013, 10)
+>>> quotinent
+201
+>>> remainder
+3
+```
+
+## Conditional statements
+
+False values in Python: `False 0 '' None`
+
+True values in Python: Anything else(True)
+
+# Textbook
+
+### 1.5.6 Testing
+
+**Assertions.** When the expression being asserted evaluates to a true value, executing an assert statement has no effect. When it is a false value, assert causes an error that halts execution.
+
+```python
+assert fib(8) == 13
+
+>>> def fib_test():
+        assert fib(2) == 1, 'The 2nd Fibonacci number should be 1'
+        assert fib(3) == 1, 'The 3rd Fibonacci number should be 1'
+        assert fib(50) == 7778742049, 'Error at the 50th Fibonacci number'
+
+```
+
+**Doctests.**
+
+```python
+# testmod 测试整个文件的doctest
+>>> from doctest import testmod
+>>> testmod()
+TestResults(failed=0, attempted=2)
+```
+
+```python
+# run_docstring_examples 运行指定函数的doctest. sum_naturals：函数名。globals()：global environment。True：打印详细信息。
+>>> from doctest import run_docstring_examples
+>>> run_docstring_examples(sum_naturals, globals(), True)
+```
+
+
+
+# Lab
+
 > Windows use python to substitute python3
 
-# Using Python
+## Using OK
 
-exit python: `exit()` or`Ctrl-D`
-
-open an interactive session: `python3 -i lab00.py`
-
-Runs doctests in a particular file: `python3 -m doctest lab00.py`
-
-# Using OK
+To use Ok to run doctests for a specified function, run the following command:
 
 `python3 ok -q <specified function>`
 
@@ -20,23 +83,17 @@ You can also use the debug printing feature in OK by writing
 
 `print("DEBUG:", x)`
 
-Finally, when you have finished all the questions in [lab01.py](https://inst.eecs.berkeley.edu/~cs61a/fa22/lab/lab01/lab01.py), you must submit the assignment using the `--submit` option:
+Finally, when you have finished all the questions in lab01.py, you must submit the assignment using the `--submit` option:
 
 `python3 ok --submit`
 
-# Notes
-
-**Truthy and Falsey Values**: It turns out `and` and `or` work on more than just booleans (`True`, `False`). Python values such as `0`, `None`, `''` (the empty string), and `[]` (the empty list) are considered false values. *All* other values are considered true values.
-
-
-
-# lab01
-
-### control
+## Control
 
 `python3 ok -q control -u`
 
 ### short-circuit
+
+**Truthy and Falsey Values**: It turns out `and` and `or` work on more than just booleans (`True`, `False`). Python values such as `0`, `None`, `''` (the empty string), and `[]` (the empty list) are considered false values. *All* other values are considered true values.
 
 `python3 ok -q short-circuit -u`
 
