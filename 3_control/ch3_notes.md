@@ -93,9 +93,9 @@ Finally, when you have finished all the questions in lab01.py, you must submit t
 
 ### short-circuit
 
-**Truthy and Falsey Values**: It turns out `and` and `or` work on more than just booleans (`True`, `False`). Python values such as `0`, `None`, `''` (the empty string), and `[]` (the empty list) are considered false values. *All* other values are considered true values.
-
 `python3 ok -q short-circuit -u`
+
+**Truthy and Falsey Values**: It turns out `and` and `or` work on more than just booleans (`True`, `False`). Python values such as `0`, `None`, `''` (the empty string), and `[]` (the empty list) are considered false values. *All* other values are considered true values.
 
 ```python
 >>> True and 13
@@ -115,3 +115,15 @@ Finally, when you have finished all the questions in lab01.py, you must submit t
 0
 ```
 
+### Debugging
+
+Q: How do you prevent the ok autograder from interpreting print statements as output?
+
+Print with 'DEBUG:' at the front of the outputted line`
+
+Q: What is the best way to open an interactive terminal to investigate a failing test for question sum_digits in assignment lab01?
+python3 ok -q sum_digits -i
+
+Q: What is the best way to look at an environment diagram to investigate a failing test for question sum_digits in assignment lab01?
+
+python3 ok -q sum_digits --trace
